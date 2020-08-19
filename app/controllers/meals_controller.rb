@@ -1,10 +1,10 @@
 class MealsController < ApplicationController
   def index
-    @meals_params = meals_search_params
-    @meals_name = Meal.search(@meals_params)
   end
   
-  def show
+  def search
+    @meals_params = meals_search_params
+    @meals_name = Meal.search(@meals_params)
   end
   
   def new

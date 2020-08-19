@@ -1,6 +1,6 @@
 <h1>PickMeals#index</h1>
 
-<%= form_with(scope: :search, url: meals_path, method: :get, local: true) do |f| %>
+<%= form_with(scope: :search, url: meals_search_path, method: :get, local: true) do |f| %>
 <div>
   <%= f.radio_button :main_dish, :meat %>
   <%= f.label :main_dish_meat, "肉" %>
@@ -22,12 +22,6 @@
   <%= f.label :carbs_noodles, "麺類" %>
 </div>
 <%= f.submit('決める！') %>
-<% end %>
-
-<%= p @meals_params[:main_dish] %>
-
-<% @meals_name.each do |meal| %>
-  <%= meal.meal_name %>
 <% end %>
 
 <%= link_to 'create', new_meal_path %>
