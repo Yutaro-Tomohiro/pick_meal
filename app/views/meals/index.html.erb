@@ -1,0 +1,33 @@
+<h1>PickMeals#index</h1>
+
+<%= form_with(scope: :search, url: meals_path, method: :get, local: true) do |f| %>
+<div>
+  <%= f.radio_button :main_dish, :meat %>
+  <%= f.label :main_dish_meat, "肉" %>
+
+  <%= f.radio_button :main_dish, :fish %>
+  <%= f.label :main_dish_fish, "魚" %>
+
+  <%= f.radio_button :main_dish, :vegetables %>
+  <%= f.label :main_dish_vegetables, "野菜" %>
+</div>
+<div>
+  <%= f.radio_button :carbs, :rice %>
+  <%= f.label :carbs_rice, "ご飯" %>
+
+  <%= f.radio_button :carbs, :bread %>
+  <%= f.label :main_dish_bread, "パン" %>
+
+  <%= f.radio_button :carbs, :noodles %>
+  <%= f.label :carbs_noodles, "麺類" %>
+</div>
+<%= f.submit('決める！') %>
+<% end %>
+
+<%= p @meals_params[:main_dish] %>
+
+<% @meals_name.each do |meal| %>
+  <%= meal.meal_name %>
+<% end %>
+
+<%= link_to 'create', new_meal_path %>

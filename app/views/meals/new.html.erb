@@ -1,0 +1,35 @@
+<h1>料理登録ページ</h1>
+
+<% if flash.notice.present? %>
+  <%= flash.notice %>
+<% end %>
+
+<%= form_with model: @meal do |f| %>
+<div>
+  <%= f.label :meal_name, "料理名" %>
+  <%= f.text_field :meal_name %>
+</div>
+<div>
+  <%= f.radio_button :main_dish, :meat %>
+  <%= f.label :main_dish_meat, "肉" %>
+
+  <%= f.radio_button :main_dish, :fish %>
+  <%= f.label :main_dish_fish, "魚" %>
+
+  <%= f.radio_button :main_dish, :vegetables %>
+  <%= f.label :main_dish_vegetables, "野菜" %>
+</div>
+<div>
+  <%= f.radio_button :carbs, :rice %>
+  <%= f.label :carbs_rice, "ご飯" %>
+
+  <%= f.radio_button :carbs, :bread %>
+  <%= f.label :main_dish_bread, "パン" %>
+
+  <%= f.radio_button :carbs, :noodles %>
+  <%= f.label :carbs_noodles, "麺類" %>
+</div>
+<%= f.submit %>
+<% end %>
+
+<%= link_to 'index', root_path %>
