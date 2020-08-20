@@ -1,5 +1,7 @@
-<h1>Meals#search</h1>
-<%= link_to '検索に戻る', root_path %>
-<% @meals_name.each do |meal| %>
-  <%= meal.meal_name %>
-<% end %>
+<div class='main-content'>
+  <h1 class="main-message">今日のご飯のおすすめ！</h1>
+  <% @meals_name.each do |meal| %>
+    <p class="pickup-meals"><%= meal.meal_name %></p>
+  <% end %>
+  <div class="any-btn"><%= link_to '検索に戻る', root_path %></div>
+</div>

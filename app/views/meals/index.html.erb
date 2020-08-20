@@ -1,27 +1,28 @@
-<h1>PickMeals#index</h1>
+<div class='main-content'>
+  <h1 class="main-message">食べたい気分の物を選ぼう！</h1>
 
-<%= form_with(scope: :search, url: meals_search_path, method: :get, local: true) do |f| %>
-<div>
-  <%= f.radio_button :main_dish, :meat %>
-  <%= f.label :main_dish_meat, "肉" %>
+  <%= form_with(scope: :search, url: meals_search_path, method: :get, local: true) do |f| %>
+  <div class='meal-btn-section'>
+    <%= f.radio_button :main_dish, :meat, :id => "meat" %>
+    <%= f.label :main_dish_meat, image_tag('steak_icon.png'), :for => "meat" %>
 
-  <%= f.radio_button :main_dish, :fish %>
-  <%= f.label :main_dish_fish, "魚" %>
+    <%= f.radio_button :main_dish, :fish, :id => "fish" %>
+    <%= f.label :main_dish_fish, image_tag('fish_icon.png'), :for => "fish" %>
 
-  <%= f.radio_button :main_dish, :vegetables %>
-  <%= f.label :main_dish_vegetables, "野菜" %>
+    <%= f.radio_button :main_dish, :vegetables, :id => "vegetables" %>
+    <%= f.label :main_dish_vegetables, image_tag('vegetables_icon.png'), :for => "vegetables" %>
+  </div>
+  <div class='meal-btn-section'>
+    <%= f.radio_button :carbs, :rice, :id => "rice" %>
+    <%= f.label :carbs_rice, image_tag('rice_icon.png'), :for => "rice" %>
+
+    <%= f.radio_button :carbs, :bread, :id => "bread" %>
+    <%= f.label :main_dish_bread, image_tag('bread_icon.png'), :for => "bread" %>
+
+    <%= f.radio_button :carbs, :noodles, :id => "noodles" %>
+    <%= f.label :carbs_noodles, image_tag('noodles_icon.png'), :for => "noodles" %>
+  </div>
+  <div class="any-btn"><%= f.submit '決める！', class: 'btn btn-info btn-position' %></div>
+  <% end %>
+  <div class="any-btn"><%= link_to 'create', new_meal_path, class: 'btn btn-success btn-position' %></div>
 </div>
-<div>
-  <%= f.radio_button :carbs, :rice %>
-  <%= f.label :carbs_rice, "ご飯" %>
-
-  <%= f.radio_button :carbs, :bread %>
-  <%= f.label :main_dish_bread, "パン" %>
-
-  <%= f.radio_button :carbs, :noodles %>
-  <%= f.label :carbs_noodles, "麺類" %>
-</div>
-<%= f.submit('決める！') %>
-<% end %>
-
-<%= link_to 'create', new_meal_path %>

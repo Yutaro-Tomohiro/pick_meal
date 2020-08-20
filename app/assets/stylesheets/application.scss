@@ -1,0 +1,81 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+@import "bootstrap";
+
+body {
+    font-family: "Helvetica Neue",
+    Arial,
+    "Hiragino Kaku Gothic ProN",
+    "Hiragino Sans",
+    Meiryo,
+    sans-serif;
+    color: #ca2554;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(-135deg, #E4A972, #9941D8);
+}
+
+.main-content {
+    background-color: #F8F8FF;
+    width: 40%;
+    height: 50%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    border-radius: 10px 10px 10px 10px;
+}
+
+.main-message {
+    margin: 15px;
+    text-align: center;
+}
+
+.meal-btn-section {
+    margin: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+.meal-btn-section label {
+    margin: 10px 20px;
+}
+
+.meal-btn-section input[type="radio"] {
+    display: none;
+}
+
+.meal-btn-section input[type="radio"]:checked + label img {
+    opacity: 0.5;
+}
+
+.any-btn {
+    text-align: center;
+}
+
+.btn-position {
+    margin: 10px;
+    width: 40%;
+}
+
+.pickup-meals {
+    text-align: center;
+    color: #3c294e;
+    font-size: 24px;
+    margin: 30px;
+}
